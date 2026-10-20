@@ -1,0 +1,55 @@
+
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 600 690"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9eddf"/>
+      <stop offset="100%" stop-color="#a8d1b6"/>
+    </linearGradient>
+
+    <clipPath id="photoClip">
+      <circle cx="300" cy="280" r="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="690" fill="url(#bg)"/>
+
+  <!-- Profile photo -->
+  <circle cx="300" cy="280" r="210" fill="#f8fbf8"/>
+
+  <image
+    xlink:href="Danang.jpg"
+    x="100"
+    y="80"
+    width="400"
+    height="400"
+    preserveAspectRatio="xMidYMid slice"
+    clip-path="url(#photoClip)"
+  />
+
+  <!-- Name -->
+  <text
+    x="300"
+    y="550"
+    font-family="Arial, sans-serif"
+    font-size="38"
+    font-weight="bold"
+    text-anchor="middle"
+    fill="#286a49">
+    Waliddhi Danang
+  </text>
+
+  <text
+    x="300"
+    y="585"
+    font-family="Arial, sans-serif"
+    font-size="17"
+    text-anchor="middle"
+    fill="#286a49">
+    Personal Portfolio
+  </text>
+
+</svg>
