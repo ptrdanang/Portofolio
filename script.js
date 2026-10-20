@@ -40,12 +40,13 @@ if (themeToggleBtn) {
   });
 }
 
-// 3. Modal Popup Contact Form Logic
+// 3. Modal Popup Contact Form & Web3Forms AJAX Submission Logic
 const contactModal = document.querySelector("#contactModal");
 const modalCloseBtn = document.querySelector("#modalClose");
 const modalOverlay = document.querySelector("#modalOverlay");
 const contactTriggers = document.querySelectorAll(".contact-trigger");
 const contactForm = document.querySelector("#contactForm");
+const submitBtn = document.querySelector("#submitBtn");
 
 // Buka Modal saat tombol Hubungi Saya diklik
 contactTriggers.forEach((btn) => {
@@ -71,25 +72,38 @@ if (modalOverlay && contactModal) {
   });
 }
 
-// Proses Kirim Form via Mailto
+// Proses Kirim Form Langsung (Tanpa Membuka Aplikasi Email Lain)
 if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const name = document.querySelector("#senderName").value;
-    const senderEmail = document.querySelector("#senderEmail").value;
-    const recipientEmail = document.querySelector("#recipientEmail").value;
-    const subject = document.querySelector("#messageSubject").value;
-    const message = document.querySelector("#messageBody").value;
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = "Mengirim...";
+    submitBtn.disabled = true;
 
-    const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-      `Nama Pengirim: ${name}\nEmail Pengirim: ${senderEmail}\n\nPesan:\n${message}`
-    )}`;
+    const formData = new FormData(contactForm);
 
-    window.location.href = mailtoLink;
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
 
-    contactModal.classList.remove("active");
-    contactForm.reset();
+      const data = await response.json();
+
+      if (data.success) {
+        alert("Pesan berhasil terkirim langsung ke email Danang!");
+        contactForm.reset();
+        contactModal.classList.remove("active");
+      } else {
+        alert("Gagal mengirim pesan: " + data.message);
+      }
+    } catch (error) {
+      alert("Terjadi kesalahan koneksi. Silakan coba lagi.");
+    } finally {
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    }
   });
 }
 
