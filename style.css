@@ -321,9 +321,9 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 
 .certificate-img-wrap { 
   width: 100%;
-  aspect-ratio: 16 / 11; 
+  aspect-ratio: 16 / 10; /* Sedikit lebih melebar */
   overflow: hidden; 
-  background: var(--bg-soft); /* Mengubah background agar sisa ruang kosong terlihat rapi */
+  background: var(--bg-card); /* Menyesuaikan dengan warna card agar sisa ruang menyatu */
   border-bottom: 1px solid var(--line);
   position: relative;
   display: flex;
@@ -334,7 +334,7 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .certificate-img { 
   width: 100%; 
   height: 100%; 
-  object-fit: contain; /* Mengubah dari cover ke contain agar seluruh isi sertifikat (termasuk IBM) terlihat seutuhnya tanpa terpotong */
+  object-fit: contain; /* Memastikan seluruh isi sertifikat terlihat utuh */
   object-position: center; 
   transition: var(--transition); 
 }
