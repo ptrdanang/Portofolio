@@ -276,20 +276,76 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .cloud-server { position: absolute; display: grid; gap: 4px; top: 50px; }
 .cloud-server i { width: 40px; height: 7px; border-radius: 3px; background: var(--bg-card); border: 1px solid var(--line); }
 
-/* Styling Kartu Sertifikat (Gambar + Tulisan) */
-.certificates-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.certificate-card {
-  background: var(--bg-card); border: 1px solid var(--line); border-radius: 20px;
-  overflow: hidden; transition: var(--transition); display: flex; flex-direction: column;
+/* Styling Kartu Sertifikat (Proposional & Utuh) */
+.certificates-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 22px; 
 }
-.certificate-card:hover { transform: translateY(-6px); border-color: var(--green); box-shadow: var(--shadow-hover); }
-.certificate-img-wrap { height: 200px; overflow: hidden; background: var(--bg-soft); border-bottom: 1px solid var(--line); }
-.certificate-img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
-.certificate-card:hover .certificate-img { transform: scale(1.05); }
-.certificate-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-.certificate-issuer { font-size: 13px; color: var(--ink); font-weight: 600; margin: 4px 0 2px; }
-.certificate-date { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-.certificate-body h3 { font-size: 17px; margin-bottom: 6px; }
+
+.certificate-card {
+  background: var(--bg-card); 
+  border: 1px solid var(--line); 
+  border-radius: 20px;
+  overflow: hidden; 
+  transition: var(--transition); 
+  display: flex; 
+  flex-direction: column;
+}
+
+.certificate-card:hover { 
+  transform: translateY(-6px); 
+  border-color: var(--green); 
+  box-shadow: var(--shadow-hover); 
+}
+
+.certificate-img-wrap { 
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Mengikuti rasio sertifikat landscape */
+  overflow: hidden; 
+  background: #ffffff; /* Latar belakang putih bersih */
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  padding: 12px; /* Memberi jarak agar sertifikat tidak menempel ke garis */
+}
+
+.certificate-img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; /* PENTING: Menampilkan seluruh gambar sertifikat tanpa terpotong */
+  transition: var(--transition); 
+}
+
+.certificate-card:hover .certificate-img { 
+  transform: scale(1.03); 
+}
+
+.certificate-body { 
+  padding: 22px; 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.certificate-issuer { 
+  font-size: 13px; 
+  color: var(--ink); 
+  font-weight: 600; 
+  margin: 6px 0 2px; 
+}
+
+.certificate-date { 
+  font-size: 12px; 
+  color: var(--muted); 
+  margin-bottom: 14px; 
+}
+
+.certificate-body h3 { 
+  font-size: 17px; 
+  margin-bottom: 6px; 
+  line-height: 1.3;
+}
 
 /* Experience & Placeholders */
 .experience-placeholder {
