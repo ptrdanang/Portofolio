@@ -321,18 +321,19 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 
 .certificate-img-wrap { 
   width: 100%;
-  aspect-ratio: 1.414 / 1; /* Rasio standar sertifikat A4/Landscape */
+  aspect-ratio: 16 / 10;
   overflow: hidden; 
   background: #ffffff;
   border-bottom: 1px solid var(--line);
-  padding: 0; /* Menghilangkan sela/gang samping agar pas di pinggir */
+  display: grid;
+  place-items: center;
+  padding: 8px;
 }
 
 .certificate-img { 
   width: 100%; 
   height: 100%; 
-  object-fit: cover; /* Mengisi penuh bingkai tanpa ada sela kosong */
-  object-position: top center; /* Memastikan bagian atas sertifikat tepat di posisi paling atas */
+  object-fit: contain;
   transition: var(--transition); 
 }
 
