@@ -336,8 +336,9 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
   transition: var(--transition); 
 }
 
-.certificate-card:hover .certificate-img { 
-  transform: scale(1.03); 
+.certificate-card.certificate-ibm .certificate-img-wrap {
+  aspect-ratio: 16 / 9; /* Rasio standar landscape yang lebih lebar untuk IBM */
+  background: #ffffff; /* Memastikan background putih bersih di belakang sertifikat IBM */
 }
 
 .certificate-body { 
