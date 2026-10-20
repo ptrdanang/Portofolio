@@ -321,9 +321,9 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 
 .certificate-img-wrap { 
   width: 100%;
-  aspect-ratio: 16 / 11.5; /* Menyesuaikan rasio agar kotak gambar sedikit lebih pas untuk format sertifikat landscape */
+  aspect-ratio: 16 / 10; /* Mengembalikan rasio ideal kotak kartu */
   overflow: hidden; 
-  background: var(--bg-card); /* Menyamakan warna latar dengan kartu */
+  background: var(--bg-card);
   border-bottom: 1px solid var(--line);
   position: relative;
 }
@@ -331,8 +331,7 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .certificate-img { 
   width: 100%; 
   height: 100%; 
-  object-fit: cover; /* Memaksa gambar mengisi penuh seluruh area kotak tanpa menyisakan ruang kosong */
-  object-position: center; 
+  object-fit: fill; /* Memaksa gambar pas menutupi seluruh sisi kotak dari ujung ke ujung */
   transition: var(--transition); 
 }
 
