@@ -203,14 +203,17 @@
         <p>Isi formulir di bawah ini untuk terhubung dengan Danang.</p>
       </div>
       <form class="contact-form" id="contactForm">
+        <!-- MASUKKAN ACCESS KEY WEB3FORMS DI BAWAH INI -->
+        <input type="hidden" name="access_key" value="ef2494e9-43c5-414a-9941-49b0c6106e70">
+        
         <div class="form-group">
           <label for="senderName">Nama Lengkap</label>
-          <input type="text" id="senderName" placeholder="Masukkan nama asli Anda" required>
+          <input type="text" name="name" id="senderName" placeholder="Masukkan nama asli Anda" required>
         </div>
         
         <div class="form-group">
           <label for="senderEmail">Email Pengirim (Email Anda)</label>
-          <input type="email" id="senderEmail" placeholder="nama@email.com" required>
+          <input type="email" name="email" id="senderEmail" placeholder="nama@email.com" required>
         </div>
 
         <div class="form-group">
@@ -221,15 +224,15 @@
 
         <div class="form-group">
           <label for="messageSubject">Subjek / Topik</label>
-          <input type="text" id="messageSubject" placeholder="Contoh: Diskusi Proyek / Tawaran Kolaborasi" required>
+          <input type="text" name="subject" id="messageSubject" placeholder="Contoh: Diskusi Proyek / Tawaran Kolaborasi" required>
         </div>
 
         <div class="form-group">
           <label for="messageBody">Pesan</label>
-          <textarea id="messageBody" rows="3" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+          <textarea name="message" id="messageBody" rows="3" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
         </div>
 
-        <button type="submit" class="button button-primary btn-submit">
+        <button type="submit" class="button button-primary btn-submit" id="submitBtn">
           Kirim Pesan <span>↗</span>
         </button>
       </form>
