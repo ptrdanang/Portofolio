@@ -1,4 +1,4 @@
-/* Danang Portfolio — Biru Modern, Interaktif, & Dual Mode */
+/* Danang Portfolio — Full Width, Ultra Responsive & Dual Mode */
 :root {
   --bg-main: #ffffff;
   --bg-soft: #f8fafc;
@@ -42,6 +42,7 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -49,7 +50,11 @@ img { max-width: 100%; display: block; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; cursor: pointer; }
 
-.container { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+/* Kontainer Utama Diperlebar agar proporsional dan tidak kosong di samping */
+.container { 
+  width: min(1360px, calc(100% - 48px)); 
+  margin-inline: auto; 
+}
 .section { padding: 90px 0; }
 .section-soft { background: var(--bg-soft); transition: background 0.4s ease; }
 
@@ -60,18 +65,22 @@ button { font: inherit; cursor: pointer; }
 }
 .skip-link:focus { top: 10px; }
 
-/* Navigation */
+/* Navigation Header */
 .site-header {
-  height: 78px; position: sticky; top: 0; z-index: 50;
+  height: 80px; position: sticky; top: 0; z-index: 50;
   background: var(--header-bg);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
   transition: background 0.4s ease, border-color 0.4s ease;
 }
+.site-header .container {
+  width: min(1400px, calc(100% - 48px));
+}
 .nav { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 10px; font-family: Manrope, sans-serif; font-size: 20px; font-weight: 800; letter-spacing: -.8px; }
-.brand-mark { width: 35px; height: 35px; border-radius: 11px; background: var(--green); color: white; display: grid; place-items: center; font-size: 17px; }
-.brand-dot, .accent-text { color: var(--green); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: Manrope, sans-serif; font-size: 19px; font-weight: 800; letter-spacing: -.8px; }
+.brand-mark { width: 36px; height: 36px; border-radius: 11px; background: var(--green); color: white; display: grid; place-items: center; font-size: 15px; }
+.brand-dot { color: var(--green); margin-left: 4px; }
+.accent-text { color: var(--green); }
 
 .nav-controls { display: flex; align-items: center; gap: 12px; }
 .theme-toggle {
@@ -95,7 +104,7 @@ button { font: inherit; cursor: pointer; }
 .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px; border-radius: 2px; }
 
 /* Hero Section */
-.hero { min-height: 600px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 55px; padding: 60px 0; }
+.hero { min-height: 620px; display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: center; gap: 60px; padding: 70px 0; }
 .eyebrow { font-size: 11px; letter-spacing: 1.8px; font-weight: 700; color: var(--green); margin-bottom: 19px; }
 .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-right: 8px; vertical-align: middle; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2); animation: pulse 2s infinite; }
 
@@ -106,10 +115,10 @@ button { font: inherit; cursor: pointer; }
 }
 
 h1, h2, h3 { font-family: Manrope, sans-serif; letter-spacing: -1.5px; line-height: 1.18; color: var(--ink); }
-h1 { font-size: clamp(40px, 5vw, 62px); font-weight: 800; margin-bottom: 23px; }
-h2 { font-size: clamp(30px, 3.4vw, 42px); font-weight: 800; margin-bottom: 18px; }
+h1 { font-size: clamp(38px, 4.5vw, 62px); font-weight: 800; margin-bottom: 23px; }
+h2 { font-size: clamp(28px, 3.4vw, 42px); font-weight: 800; margin-bottom: 18px; }
 h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
-.hero-description { font-size: 16px; max-width: 540px; color: var(--muted); line-height: 1.8; }
+.hero-description { font-size: 16px; max-width: 620px; color: var(--muted); line-height: 1.8; }
 
 .hero-actions { display: flex; gap: 14px; margin-top: 29px; flex-wrap: wrap; }
 .button {
@@ -128,9 +137,9 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .meta-icon { font-size: 17px; color: var(--green); }
 
 /* Hero Visual & Animations */
-.hero-visual { position: relative; min-height: 420px; display: grid; place-items: center; }
+.hero-visual { position: relative; min-height: 450px; display: grid; place-items: center; width: 100%; }
 .portrait-frame {
-  width: min(320px, 76%); aspect-ratio: 4/4.6; border-radius: 46% 46% 28px 28px;
+  width: min(350px, 85%); aspect-ratio: 4/4.6; border-radius: 46% 46% 28px 28px;
   overflow: hidden; background: var(--mint); position: relative; z-index: 2;
   box-shadow: var(--shadow); transition: var(--transition);
 }
@@ -143,8 +152,8 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
   border: 1px solid var(--line);
 }
 
-.visual-orbit { position: absolute; border: 1px solid var(--line); border-radius: 50%; width: 400px; height: 400px; animation: spin 30s linear infinite; }
-.orbit-two { width: 480px; height: 480px; border-style: dashed; animation: spin 45s linear infinite reverse; }
+.visual-orbit { position: absolute; border: 1px solid var(--line); border-radius: 50%; width: 440px; height: 440px; animation: spin 30s linear infinite; }
+.orbit-two { width: 520px; height: 520px; border-style: dashed; animation: spin 45s linear infinite reverse; }
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
@@ -441,25 +450,29 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .back-top { transition: var(--transition); }
 .back-top:hover { color: var(--green); transform: translateY(-2px); }
 
-/* Responsive Media Queries */
-@media(max-width: 992px) {
-  .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .projects-grid { grid-template-columns: 1fr; }
-  .about-grid, .experience-grid, .contact-panel { grid-template-columns: 1fr; gap: 35px; }
-  .hero { grid-template-columns: 1fr; text-align: center; }
+/* Responsive Media Queries untuk HP & Tablet */
+@media(max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; text-align: center; gap: 40px; }
   .hero-description { margin: 0 auto; }
   .hero-actions, .hero-meta { justify-content: center; }
-  .visual-orbit { width: 320px; height: 320px; }
-  .orbit-two { width: 380px; height: 380px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .projects-grid { grid-template-columns: 1fr; }
+  .about-grid, .experience-grid, .contact-panel { grid-template-columns: 1fr; gap: 30px; }
 }
 
 @media(max-width: 768px) {
+  .container { width: min(100% - 32px, 540px); }
+  .site-header .container { width: calc(100% - 24px); }
   .menu-toggle { display: block; }
   .nav-links {
-    display: none; position: absolute; top: 77px; left: 0; right: 0;
+    display: none; position: absolute; top: 80px; left: 0; right: 0;
     background: var(--bg-card); padding: 20px; border-bottom: 1px solid var(--line);
     flex-direction: column; align-items: stretch; gap: 10px; box-shadow: var(--shadow);
   }
   .nav-links.open { display: flex; }
   .nav-cta { text-align: center; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .trust-inner { justify-content: center; gap: 10px 14px; }
+  .trust-inner i { display: none; }
+  .trust-inner span { width: 100%; text-align: center; }
 }
