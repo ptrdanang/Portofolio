@@ -276,7 +276,7 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 .cloud-server { position: absolute; display: grid; gap: 4px; top: 50px; }
 .cloud-server i { width: 40px; height: 7px; border-radius: 3px; background: var(--bg-card); border: 1px solid var(--line); }
 
-/* Styling Kartu Sertifikat (Proposional & Utuh) */
+/* Styling Kartu Sertifikat (Pas Ujung ke Ujung & Tidak Kepotong) */
 .certificates-grid { 
   display: grid; 
   grid-template-columns: repeat(3, 1fr); 
@@ -301,19 +301,18 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 
 .certificate-img-wrap { 
   width: 100%;
-  aspect-ratio: 16 / 10; /* Mengikuti rasio sertifikat landscape */
+  aspect-ratio: 1.414 / 1; /* Rasio standar sertifikat A4/Landscape */
   overflow: hidden; 
-  background: #ffffff; /* Latar belakang putih bersih */
+  background: #ffffff;
   border-bottom: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  padding: 12px; /* Memberi jarak agar sertifikat tidak menempel ke garis */
+  padding: 0; /* Menghilangkan sela/gang samping agar pas di pinggir */
 }
 
 .certificate-img { 
   width: 100%; 
   height: 100%; 
-  object-fit: contain; /* PENTING: Menampilkan seluruh gambar sertifikat tanpa terpotong */
+  object-fit: cover; /* Mengisi penuh bingkai tanpa ada sela kosong */
+  object-position: top center; /* Memastikan bagian atas sertifikat tepat di posisi paling atas */
   transition: var(--transition); 
 }
 
