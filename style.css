@@ -53,7 +53,7 @@ button { font: inherit; cursor: pointer; }
 /* Kontainer Utama Diperlebar agar proporsional */
 .container { 
   width: min(1440px, calc(100% - 48px)); 
-  margin-inline: auto;
+  margin-inline: auto; 
 }
 
 .section { padding: 90px 0; }
@@ -280,7 +280,7 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
 /* Styling Kartu Sertifikat (Pas Ujung ke Ujung & Tidak Kepotong) */
 .certificates-grid { 
   display: grid; 
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); 
   gap: 20px; 
 }
 
