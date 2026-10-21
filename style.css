@@ -338,11 +338,18 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-/* Mengatur khusus gambar sertifikat ber-class img-ibm */
 .certificate-img.img-ibm {
   object-fit: contain !important;
-  background: #ffffff;
-  padding: 6px;
+  /* Memberikan warna latar abu-abu netral yang menyatu dengan header sertifikat IBM */
+  background-color: #d1d5db; 
+  padding: 8px; /* Memberikan ketebalan bingkai/border di sekeliling gambar */
+  border-radius: 12px 12px 0 0; /* Menyesuaikan lekukan sudut atas kartu */
+  box-sizing: border-box;
+}
+
+/* Penyesuaian otomatis untuk Dark Mode jika menggunakan tema gelap */
+[data-theme="dark"] .certificate-img.img-ibm {
+  background-color: #334155; /* Warna slate dark yang sangat elegan untuk mode gelap */
 }
 
 /* Efek Zoom Halus Saat Kursor Diarahkan */
