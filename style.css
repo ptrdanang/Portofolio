@@ -352,6 +352,29 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
   background-color: #334155; /* Warna slate dark yang sangat elegan untuk mode gelap */
 }
 
+/* Styling khas untuk pembungkus dan bingkai sertifikat berformat potret (portrait) */
+.certificate-img-wrap.portrait-wrap {
+  aspect-ratio: 1 / 1.35; /* Menyesuaikan nisbah kotak menegak (vertikal) */
+  background-color: #d1d5db; /* Warna bingkai celah yang senada */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img.img-portrait {
+  object-fit: contain !important;
+  width: 100%;
+  height: 100%;
+  padding: 6px; /* Ketebalan bingkai border di sekeliling gambar */
+  background-color: #ffffff; /* Latar belakang putih bersih di dalam bingkai */
+  box-sizing: border-box;
+}
+
+/* Penyesuaian Mod Gelap (Dark Mode) untuk bingkai portrait */
+[data-theme="dark"] .certificate-img-wrap.portrait-wrap {
+  background-color: #334155;
+} 
+
 /* Efek Zoom Halus Saat Kursor Diarahkan */
 .certificate-card:hover .certificate-img { 
   transform: scale(1.04); 
