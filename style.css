@@ -338,6 +338,13 @@ h3 { font-size: 19px; letter-spacing: -.5px; margin-bottom: 9px; }
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
+/* Mengatur khusus gambar sertifikat ber-class img-ibm */
+.certificate-img.img-ibm {
+  object-fit: contain !important;
+  background: #ffffff;
+  padding: 6px;
+}
+
 /* Efek Zoom Halus Saat Kursor Diarahkan */
 .certificate-card:hover .certificate-img { 
   transform: scale(1.04); 
